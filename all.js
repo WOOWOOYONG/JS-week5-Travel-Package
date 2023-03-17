@@ -136,9 +136,9 @@ const checkInputs = () => {
   const ticketName = ticketNameInput.value;
   const imgUrl = ticketImgUrlInput.value;
   const area = ticketRegionInput.value;
-  const price = ticketPriceInput.value;
-  const group = ticketNumInput.value;
-  const rate = ticketRateInput.value;
+  const price = Number(ticketPriceInput.value);
+  const group = Number(ticketNumInput.value);
+  const rate = Number(ticketRateInput.value);
   const description = ticketDescriptionInput.value;
   if (ticketName === '') {
     setError('ticketName', errMsg);
@@ -167,7 +167,7 @@ const checkInputs = () => {
   }
   if (rate === '') {
     setError('ticketRate', errMsg);
-  } else if (Number(rate) > 10 || Number(rate) < 1) {
+  } else if (rate > 10 || rate < 1) {
     setError('ticketRate', rateMsg);
     rateCheck = false;
   } else {
@@ -189,9 +189,9 @@ const addToData = () => {
   const ticketName = ticketNameInput.value;
   const imgUrl = ticketImgUrlInput.value;
   const area = ticketRegionInput.value;
-  const price = ticketPriceInput.value;
-  const group = ticketNumInput.value;
-  const rate = ticketRateInput.value;
+  const price = Number(ticketPriceInput.value);
+  const group = Number(ticketNumInput.value);
+  const rate = Number(ticketRateInput.value);
   const description = ticketDescriptionInput.value;
   checkInputs();
   if (
