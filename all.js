@@ -172,6 +172,7 @@ const checkInputs = () => {
     rateCheck = false;
   } else {
     setSuccess('ticketRate');
+    rateCheck = true;
   }
   if (description === '') {
     setError('ticketDescription', errMsg);
