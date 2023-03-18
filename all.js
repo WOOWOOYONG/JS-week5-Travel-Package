@@ -206,6 +206,7 @@ const addToData = () => {
   ) {
     let obj = {
       name: ticketName,
+      id: Date.now(),
       imgUrl,
       area,
       description,
@@ -214,7 +215,6 @@ const addToData = () => {
       rate,
     };
     data.push(obj);
-    console.log(data);
     renderData(data);
     addTicketForm.reset();
     regionSearchSelect.selectedIndex = 0;
