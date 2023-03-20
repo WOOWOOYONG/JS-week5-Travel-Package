@@ -43,10 +43,13 @@ const url =
 
 //畫面初始化
 const init = () => {
-  axios.get(url).then((res) => {
-    data = res.data;
-    renderData(data);
-  });
+  axios
+    .get(url)
+    .then((res) => {
+      data = res.data;
+      renderData(data);
+    })
+    .catch((err) => console.log(err.message));
 };
 
 init();
@@ -72,7 +75,6 @@ const filterArea = (data, area) => {
 const regionSearchSelect = document.querySelector('.regionSearch');
 regionSearchSelect.addEventListener('change', (e) => {
   let region = e.target.value;
-  console.log(region);
   filterArea(data, region);
 });
 
