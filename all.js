@@ -48,6 +48,8 @@ const init = () => {
     .then((res) => {
       data = res.data;
       renderData(data);
+      getToalArea(data);
+      renderAreaChart(totalArea);
     })
     .catch((err) => console.log(err.message));
 };
@@ -233,6 +235,8 @@ const addToData = () => {
     };
     data.push(obj);
     renderData(data);
+    getToalArea(data);
+    renderAreaChart(totalArea);
     addTicketForm.reset();
     regionSearchSelect.selectedIndex = 0;
   } else {
@@ -242,3 +246,46 @@ const addToData = () => {
 };
 
 addTicketBtn.addEventListener('click', addToData);
+
+//組成c3.js需求資料格式
+let totalArea = [];
+const getToalArea = (data) => {
+  let obj = {};
+  data.forEach((item) => {
+    if (!obj[item.area]) {
+      obj[item.area] = 1;
+    } else {
+      obj[item.area] += 1;
+    }
+  });
+  console.log(obj);
+  totalArea = Object.entries(obj);
+};
+
+//c3.js
+const renderAreaChart = (Areadata) => {
+  var chart = c3.generate({
+    bindto: '#chart',
+    size: {
+      width: 200,
+      height: 200,
+    },
+
+    data: {
+      columns: Areadata,
+      type: 'donut',
+      colors: {
+        台北: '#26C0C7',
+        台中: '#5151D3',
+        高雄: '#E68618',
+      },
+    },
+    donut: {
+      title: '套票地區比重',
+      width: 10,
+      label: {
+        show: false,
+      },
+    },
+  });
+};

@@ -248,8 +248,8 @@ ul {
   -ms-flex-align: center;
   align-items: center;
   max-width: 920px;
-  margin: 0 auto;
   padding: 50px 0;
+  width: 80%;
 }
 
 .search-area p {
@@ -269,7 +269,7 @@ ul {
 }
 
 .regionSearch {
-  width: 27.5%;
+  width: 30%;
   min-height: 38px;
   text-indent: 0.5rem;
   color: #818a91;
@@ -448,6 +448,22 @@ ul {
 
 .cantFind-area img {
   margin: 0 auto;
+}
+
+.regionArea {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 39px;
+  padding-top: 44px;
+}
+
+#chart {
+  width: 20%;
+  font-size: 14px;
+  color: #4b4b4b;
 }
 
 @media (max-width: 768px) {
