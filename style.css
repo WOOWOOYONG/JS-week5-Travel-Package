@@ -470,4 +470,7 @@ ul {
   .cantFind-area {
     margin-top: 0px;
   }
+  #chart {
+    width: 100%;
+  }
 }

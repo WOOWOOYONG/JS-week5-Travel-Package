@@ -36,6 +36,8 @@
 //   },
 // ];
 let data = [];
+//c3.js需求格式
+let totalArea = [];
 
 //API url
 const url =
@@ -72,6 +74,8 @@ const filterArea = (data, area) => {
     }
   });
   renderData(filteredData);
+  getToalArea(filteredData);
+  renderAreaChart(totalArea);
 };
 
 const regionSearchSelect = document.querySelector('.regionSearch');
@@ -248,7 +252,6 @@ const addToData = () => {
 addTicketBtn.addEventListener('click', addToData);
 
 //組成c3.js需求資料格式
-let totalArea = [];
 const getToalArea = (data) => {
   let obj = {};
   data.forEach((item) => {
