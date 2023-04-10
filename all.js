@@ -64,6 +64,8 @@ const ticketArea = document.querySelector('.ticketCard-area');
 const filterArea = (data, area) => {
   if (area === '全部地區') {
     renderData(data);
+    getToalArea(data);
+    renderAreaChart(totalArea);
     return;
   }
   const filteredData = data.filter((item) => {
