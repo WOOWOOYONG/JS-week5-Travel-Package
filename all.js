@@ -268,16 +268,16 @@ const getToalArea = (data) => {
 };
 
 //c3.js
-const renderAreaChart = (Areadata) => {
+const renderAreaChart = (areaData) => {
   var chart = c3.generate({
     bindto: '#chart',
     size: {
-      width: 200,
-      height: 200,
+      width: 180,
+      height: 180,
     },
 
     data: {
-      columns: Areadata,
+      columns: areaData,
       type: 'donut',
       colors: {
         台北: '#26C0C7',
